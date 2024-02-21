@@ -1,5 +1,6 @@
 return {
 	"kdheepak/lazygit.nvim",
+	enabled = false,
 	-- optional for floating window border decoration
 	dependencies = {
 		"nvim-lua/plenary.nvim",
@@ -10,5 +11,7 @@ return {
 			noremap = true,
 			silent = true,
 		})
+
+		vim.keymap.set("n", "<TAB>", "")
 	end,
 }
