@@ -2,10 +2,13 @@ return {
 	{
 		"simrat39/rust-tools.nvim",
 		ft = "rust",
-		dependencies = "neovim/nvim-lspconfig",
+		dependencies = {
+			"hrsh7th/cmp-nvim-lsp",
+			"neovim/nvim-lspconfig",
+		},
 		opts = function()
-			local on_attach = require("plugins.configs.lspconfig").on_attach
-			local capabilities = require("plugins.configs.lspconfig").capabilities
+			local on_attach = require("warunyu.utils.on-attach")
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local options = {
 				server = {
