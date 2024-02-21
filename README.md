@@ -59,3 +59,4 @@
     - Inlay hints
 - AI
     - Codeium
+- Leetcode
