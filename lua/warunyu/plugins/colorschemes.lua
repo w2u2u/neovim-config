@@ -48,4 +48,34 @@ return {
 			})
 		end,
 	},
+	{
+		"rebelot/kanagawa.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("kanagawa").setup({
+				transparent = true,
+			})
+		end,
+	},
+	{
+		"ellisonleao/gruvbox.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("gruvbox").setup({
+				transparent_mode = true,
+			})
+		end,
+	},
+	{
+		"pauchiner/pastelnight.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("pastelnight").setup({
+				transparent = true,
+			})
+		end,
+	},
 }

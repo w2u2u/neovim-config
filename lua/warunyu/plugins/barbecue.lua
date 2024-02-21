@@ -1,7 +1,6 @@
 return {
 	"utilyre/barbecue.nvim",
 	name = "barbecue",
-	event = { "BufReadPre", "BufNewFile" },
 	version = "*",
 	dependencies = {
 		"SmiteshP/nvim-navic",
@@ -9,5 +8,6 @@ return {
 	},
 	opts = {
 		-- configurations go here
+		theme = vim.g.colors_name,
 	},
 }
