@@ -10,7 +10,12 @@ return {
 					enable = true,
 				},
 				shortcut = {
-					{ desc = "󰊳 Update", group = "@property", action = "Lazy update", key = "u" },
+					{
+						desc = "󰊳 Update",
+						group = "@property",
+						action = "Lazy update",
+						key = "u",
+					},
 					{
 						icon = " ",
 						icon_hl = "@variable",
@@ -20,16 +25,16 @@ return {
 						key = "f",
 					},
 					{
-						desc = " Apps",
-						group = "DiagnosticHint",
-						action = "Telescope app",
-						key = "a",
+						desc = " Explorer",
+						group = "Special",
+						action = "NvimTreeToggle",
+						key = "e",
 					},
 					{
-						desc = " dotfiles",
+						desc = " Lazy",
 						group = "Number",
-						action = "Telescope dotfiles",
-						key = "d",
+						action = "Lazy",
+						key = "z",
 					},
 				},
 			},

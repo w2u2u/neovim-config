@@ -17,6 +17,7 @@ return {
 	config = function()
 		require("barbar").setup({})
 
-		vim.keymap.set("n", "<Tab>", "<Cmd>BufferNext<CR>", {})
+		vim.keymap.set("n", "<Tab>", "<Cmd>BufferNext<CR>", { desc = "Next buffer" })
+		vim.keymap.set("n", "<leader>x", "<Cmd>BufferClose<CR>", { desc = "Close buffer" })
 	end,
 }

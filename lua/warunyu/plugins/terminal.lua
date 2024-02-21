@@ -19,8 +19,13 @@ return {
 			lazygit:toggle()
 		end
 
-		vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
+		vim.api.nvim_set_keymap(
+			"n",
+			"<leader>g",
+			"<cmd>lua _lazygit_toggle()<CR>",
+			{ desc = "Lazygit", noremap = true, silent = true }
+		)
 
-		vim.keymap.set({ "n", "t" }, "<C-I>", "<cmd>ToggleTerm direction=float<CR>", { desc = "Floating Terminal" })
+		vim.keymap.set({ "n", "t" }, "<leader>i", "<cmd>ToggleTerm direction=float<CR>", { desc = "Floating Terminal" })
 	end,
 }

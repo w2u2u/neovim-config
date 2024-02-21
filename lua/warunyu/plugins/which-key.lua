@@ -10,7 +10,7 @@ return {
 		-- or leave it empty to use the default settings
 		-- refer to the configuration section below
 		window = {
-			border = "double",
+			border = "rounded",
 			-- winblend = 80,
 		},
 	},
