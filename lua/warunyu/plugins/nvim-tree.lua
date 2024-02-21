@@ -6,18 +6,45 @@ return {
 	config = function()
 		local nvimtree = require("nvim-tree")
 
+		-- change color for arrows in tree to light blue
+		vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#3FC5FF ]])
+		vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#3FC5FF ]])
+
+		-- configure nvim-tree
 		nvimtree.setup({
-			sort = {
-				sorter = "case_sensitive",
-			},
 			view = {
-				width = 30,
+				width = 35,
+				relativenumber = true,
 			},
+			-- change folder arrow icons
 			renderer = {
-				group_empty = true,
+				indent_markers = {
+					enable = true,
+				},
+				icons = {
+					glyphs = {
+						folder = {
+							arrow_closed = "", -- arrow when folder is closed
+							arrow_open = "", -- arrow when folder is open
+						},
+					},
+				},
+			},
+			-- disable window_picker for
+			-- explorer to work well with
+			-- window splits
+			actions = {
+				open_file = {
+					window_picker = {
+						enable = false,
+					},
+				},
 			},
 			filters = {
-				dotfiles = true,
+				custom = { ".DS_Store" },
+			},
+			git = {
+				ignore = false,
 			},
 		})
 
