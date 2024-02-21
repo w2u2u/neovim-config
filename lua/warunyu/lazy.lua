@@ -17,7 +17,7 @@ require("lazy").setup({
 	{ import = "warunyu.plugins.lsp" },
 }, {
 	install = {
-		colorscheme = { "nightfly" },
+		colorscheme = { "catppuccin" },
 	},
 	checker = {
 		enabled = true,
