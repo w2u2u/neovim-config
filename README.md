@@ -1,0 +1,61 @@
+- Initial
+    - number
+    - relativenumber
+    - scrolloff
+- Keymap
+    - <leader> = <space>
+    - jk = <ESC>
+- ftplugin
+    - tabstop
+    - softtabstop
+    - shiftwidth
+    - expandtab
+- Package managers
+    - Lazy
+- Colorscheme
+    - Catppuccin
+    - Tokyo night
+    - Ayu
+- Fuzzy finder
+    - Telescope
+- Syntax highlighting
+    - Treesitter
+- File explorer
+    - Nvim tree
+- Look ‘n feels
+    - Lualine
+    - Dressing
+- Formatting
+    - Conform
+    - Null ls
+    - None ls
+- Autocompletion
+    - Auto pairs
+    - Nvim cmp
+        - cmp buffer
+        - cmp path
+        - LuaSnip
+        - cmp luasnip
+        - friendly snippets
+- LSP - Language Server Plugins
+    - Mason
+        - Mason LSP config
+        - Nvim LSP config
+- Others
+    - Code structure
+        - Outline
+    - Tabs
+        - bufferline
+    - Surround selections
+        - nvim surround
+    - Comments
+        - Comment.nvim
+    - Whichkey
+    - Notify
+    - Terminal
+    - Barbecue
+    - Gitsign
+    - Lazygit
+    - Inlay hints
+- AI
+    - Codeium
