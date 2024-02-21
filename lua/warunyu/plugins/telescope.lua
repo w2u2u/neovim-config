@@ -7,8 +7,11 @@ return {
 	config = function()
 		require("telescope").setup({
 			defaults = {
+				sorting_strategy = "ascending",
 				layout_config = {
 					horizontal = {
+						prompt_position = "top",
+						preview_width = 0.5,
 						preview_cutoff = 0,
 					},
 				},
@@ -27,5 +30,12 @@ return {
 		vim.keymap.set("n", "<leader>fo", builtin.buffers, { desc = "Telescope buffers" })
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 		vim.keymap.set("n", "<leader>th", builtin.colorscheme, { desc = "Telescope colorscheme" })
+		vim.keymap.set("n", "<leader>fc", builtin.commands, { desc = "Telescope commands" })
+		vim.keymap.set(
+			"n",
+			"<leader>fa",
+			builtin.current_buffer_fuzzy_find,
+			{ desc = "Telescope current buffer fuzzy find" }
+		)
 	end,
 }
