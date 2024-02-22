@@ -39,7 +39,7 @@ return {
 		config = function()
 			require("notify").setup({
 				stages = "fade",
-				render = "compact",
+				-- render = "compact",
 				background_colour = "#000000",
 			})
 		end,
