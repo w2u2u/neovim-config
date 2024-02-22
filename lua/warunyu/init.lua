@@ -9,3 +9,4 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.mapleader = " "
 
 vim.keymap.set("i", "jk", "<ESC>")
+vim.keymap.set("n", "<ESC>", ":noh<CR>")

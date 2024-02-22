@@ -3,8 +3,8 @@
     - relativenumber
     - scrolloff
 - Keymap
-    - <leader> = <space>
-    - jk = <ESC>
+    - leader to space
+    - jk to esc
 - ftplugin
     - tabstop
     - softtabstop
