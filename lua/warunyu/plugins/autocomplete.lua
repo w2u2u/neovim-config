@@ -36,6 +36,7 @@ return {
 		require("luasnip.loaders.from_vscode").lazy_load()
 
 		vim.opt.completeopt = "menu,menuone,noselect"
+		vim.api.nvim_set_hl(0, "CmpItemKindCodeium", { link = "CmpItemKindSnippet" })
 
 		cmp.setup({
 			snippet = {
@@ -54,8 +55,8 @@ return {
 				["<TAB>"] = cmp.mapping.select_next_item(),
 				["<C-b>"] = cmp.mapping.scroll_docs(-4),
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
-				["<C-l>"] = cmp.mapping.complete(),
-				["<C-h>"] = cmp.mapping.abort(),
+				["<C-c>"] = cmp.mapping.complete(),
+				["<C-x>"] = cmp.mapping.abort(),
 				["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 			}),
 			sources = cmp.config.sources({
@@ -70,12 +71,18 @@ return {
 				{ name = "path" },
 			}),
 			formatting = {
-				format = lspkind.cmp_format({
-					maxwidth = 50,
-					ellipsis_char = "...",
-					mode = "symbol_text",
-					symbol_map = { Codeium = "" },
-				}),
+				format = function(entry, vim_item)
+					local kind = lspkind.cmp_format({
+						maxwidth = 50,
+						ellipsis_char = "...",
+						mode = "symbol_text",
+						symbol_map = { Codeium = "" },
+					})(entry, vim_item)
+
+					kind.menu = ""
+
+					return kind
+				end,
 			},
 		})
 	end,
