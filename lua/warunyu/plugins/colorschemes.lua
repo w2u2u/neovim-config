@@ -89,4 +89,45 @@ return {
 			})
 		end,
 	},
+	{
+		"scottmckendry/cyberdream.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("cyberdream").setup({
+				-- Recommended - see "Configuring" below for more config options
+				transparent = true,
+				italic_comments = true,
+				hide_fillchars = true,
+				borderless_telescope = true,
+			})
+		end,
+	},
+	{
+		"ray-x/starry.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("starry").setup({
+				disable = {
+					background = true,
+				},
+				style = {
+					name = "dracula",
+				},
+			})
+		end,
+	},
+	{
+		"EdenEast/nightfox.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("nightfox").setup({
+				options = {
+					transparent = true,
+				},
+			})
+		end,
+	},
 }
