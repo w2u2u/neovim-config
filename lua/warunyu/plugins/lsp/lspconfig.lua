@@ -56,6 +56,7 @@ return {
 		lspconfig.gopls.setup({
 			on_attach = function(c, b)
 				ih.on_attach(c, b)
+				on_attach(c, b)
 			end,
 			capabilities = capabilities,
 			cmd = { "gopls" },
