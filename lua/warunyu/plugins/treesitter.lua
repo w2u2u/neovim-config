@@ -1,6 +1,16 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
+	dependencies = {
+		{
+			"nvim-treesitter/nvim-treesitter-context",
+			config = function()
+				require("treesitter-context").setup({
+					separator = "-",
+				})
+			end,
+		},
+	},
 	config = function()
 		local configs = require("nvim-treesitter.configs")
 
