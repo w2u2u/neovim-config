@@ -1,6 +1,19 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 local on_attach = function(_, bufnr)
+	vim.diagnostic.config({
+		float = {
+			border = "rounded",
+		},
+	})
+	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+		border = "rounded",
+		close_events = { "BufHidden", "InsertLeave" },
+	})
+	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+		border = "rounded",
+	})
+
 	opts.buffer = bufnr
 
 	-- set keybinds
