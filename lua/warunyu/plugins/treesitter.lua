@@ -10,6 +10,41 @@ return {
 				})
 			end,
 		},
+		{
+			"nvim-treesitter/nvim-treesitter-textobjects",
+			config = function()
+				require("nvim-treesitter.configs").setup({
+					textobjects = {
+						move = {
+							enable = true,
+							set_jumps = true,
+
+							goto_next_start = {
+								["<leader>w"] = {
+									query = "@parameter.inner",
+									desc = "Go to next parameter",
+								},
+								["<leader>j"] = {
+									query = "@statement.outer",
+									desc = "Go to next statement",
+								},
+							},
+
+							goto_previous_start = {
+								["<leader>b"] = {
+									query = "@parameter.inner",
+									desc = "Go to previous parameter",
+								},
+								["<leader>k"] = {
+									query = "@statement.outer",
+									desc = "Go to previous statement",
+								},
+							},
+						},
+					},
+				})
+			end,
+		},
 	},
 	config = function()
 		local configs = require("nvim-treesitter.configs")
