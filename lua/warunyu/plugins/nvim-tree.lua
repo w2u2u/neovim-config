@@ -11,48 +11,92 @@ return {
 		vim.g.loaded_netrwPlugin = 1
 
 		-- change color for arrows in tree to light blue
-		vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#FFA0FD ]])
-		vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#FFA0FD ]])
+		vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#5499C7 ]])
+		vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#5499C7 ]])
 
 		-- configure nvim-tree
 		nvimtree.setup({
-			view = {
-				width = 35,
-				relativenumber = true,
-			},
-			-- change folder arrow icons
+			hijack_cursor = true,
+			focus_empty_on_setup = true,
+			sync_root_with_cwd = true,
 			renderer = {
+				full_name = true,
+				group_empty = true,
+				special_files = {},
+				symlink_destination = false,
 				indent_markers = {
 					enable = false,
 				},
 				icons = {
+					git_placement = "signcolumn",
+					show = {
+						file = true,
+						folder = false,
+						folder_arrow = true,
+						git = true,
+					},
 					glyphs = {
+						default = "",
+						symlink = "",
+						bookmark = "󰆤",
+						modified = "●",
+						git = {
+							unstaged = "✗",
+							staged = "✓",
+							unmerged = "",
+							renamed = "➜",
+							untracked = "",
+							deleted = "",
+							ignored = "◌",
+						},
 						folder = {
-							arrow_closed = "", -- arrow when folder is closed
-							arrow_open = "", -- arrow when folder is open
+							arrow_closed = "", -- arrow when folder is closed
+							arrow_open = "", -- arrow when folder is open
 						},
 					},
 				},
 			},
-			-- disable window_picker for
-			-- explorer to work well with
-			-- window splits
-			actions = {
-				open_file = {
-					window_picker = {
-						enable = false,
-					},
-				},
-			},
-			filters = {
-				custom = { ".DS_Store" },
-			},
-			git = {
-				ignore = false,
-			},
-			-- Follow open files / buffers
 			update_focused_file = {
 				enable = true,
+				update_root = true,
+				ignore_list = { "help" },
+			},
+			diagnostics = {
+				enable = true,
+				show_on_dirs = true,
+			},
+			filters = {
+				custom = {
+					"^.git$",
+				},
+			},
+			actions = {
+				change_dir = {
+					enable = false,
+					restrict_above_cwd = true,
+				},
+				open_file = {
+					resize_window = true,
+					window_picker = {
+						chars = "aoeui",
+					},
+				},
+				remove_file = {
+					close_window = false,
+				},
+			},
+			log = {
+				enable = false,
+				truncate = true,
+				types = {
+					all = false,
+					config = false,
+					copy_paste = false,
+					diagnostics = false,
+					git = false,
+					profile = false,
+					watcher = false,
+				},
 			},
 		})
 
