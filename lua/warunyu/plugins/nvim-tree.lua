@@ -11,8 +11,8 @@ return {
 		vim.g.loaded_netrwPlugin = 1
 
 		-- change color for arrows in tree to light blue
-		vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#3FC5FF ]])
-		vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#3FC5FF ]])
+		vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#FFA0FD ]])
+		vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#FFA0FD ]])
 
 		-- configure nvim-tree
 		nvimtree.setup({
@@ -23,7 +23,7 @@ return {
 			-- change folder arrow icons
 			renderer = {
 				indent_markers = {
-					enable = true,
+					enable = false,
 				},
 				icons = {
 					glyphs = {
