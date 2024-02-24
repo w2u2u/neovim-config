@@ -15,14 +15,14 @@ return {
 			direction = "float",
 		})
 
-		function _lazygit_toggle()
+		function LAZYGIT_TOGGLE()
 			lazygit:toggle()
 		end
 
 		vim.api.nvim_set_keymap(
 			"n",
 			"<leader>g",
-			"<cmd>lua _lazygit_toggle()<CR>",
+			"<cmd>lua LAZYGIT_TOGGLE()<CR>",
 			{ desc = "Lazygit", noremap = true, silent = true }
 		)
 
