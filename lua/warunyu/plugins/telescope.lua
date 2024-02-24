@@ -43,7 +43,7 @@ return {
 		vim.keymap.set("n", "<leader>fc", builtin.commands, { desc = "Telescope commands" })
 		vim.keymap.set(
 			"n",
-			"<leader>fb",
+			"<leader>f/",
 			builtin.current_buffer_fuzzy_find,
 			{ desc = "Telescope current buffer fuzzy find" }
 		)
