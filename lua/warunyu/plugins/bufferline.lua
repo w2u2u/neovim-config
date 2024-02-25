@@ -4,6 +4,7 @@ return {
 	dependencies = "nvim-tree/nvim-web-devicons",
 	config = function()
 		local bufferline = require("bufferline")
+		local working_dir = string.match(vim.fn.getcwd(), "%S(%w+)$")
 
 		bufferline.setup({
 			options = {
@@ -30,7 +31,7 @@ return {
 				offsets = {
 					{
 						filetype = "NvimTree",
-						text = "File Explorer",
+						text = "󰄛  ~/.../" .. working_dir .. "  ",
 						text_align = "center",
 						separator = true,
 					},
