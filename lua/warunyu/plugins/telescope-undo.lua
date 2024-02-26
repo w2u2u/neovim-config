@@ -19,6 +19,19 @@ return {
 		extensions = {
 			undo = {
 				-- telescope-undo.nvim config, see below
+				side_by_side = true,
+				layout_strategy = "vertical",
+				layout_config = {
+					preview_height = 0.8,
+				},
+				-- mappings = {
+				-- 	i = {
+				-- 		["<CR>"] = require("telescope-undo.actions").restore,
+				-- 	},
+				-- 	n = {
+				-- 		["<CR>"] = require("telescope-undo.actions").restore,
+				-- 	},
+				-- },
 			},
 			-- no other extensions here, they can have their own spec too
 		},
@@ -29,5 +42,12 @@ return {
 		-- defaults, as well as each extension).
 		require("telescope").setup(opts)
 		require("telescope").load_extension("undo")
+
+		vim.keymap.set(
+			"n",
+			"<C-CR>",
+			require("telescope-undo.actions").restore,
+			{ desc = "Telescope restore last undo" }
+		)
 	end,
 }
