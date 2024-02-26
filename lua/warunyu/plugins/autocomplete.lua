@@ -25,6 +25,9 @@ return {
 			"Exafunction/codeium.nvim",
 			cmd = "Codeium",
 			build = ":Codeium Auth",
+			requires = {
+				"nvim-lua/plenary.nvim",
+			},
 			opts = {},
 		},
 	},
