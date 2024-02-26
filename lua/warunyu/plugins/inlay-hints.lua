@@ -1,29 +1,5 @@
 return {
 	{
-		"simrat39/rust-tools.nvim",
-		ft = "rust",
-		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
-			"neovim/nvim-lspconfig",
-		},
-		opts = function()
-			local on_attach = require("warunyu.utils.on-attach")
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-			local options = {
-				server = {
-					on_attach = on_attach,
-					capabilities = capabilities,
-				},
-			}
-
-			return options
-		end,
-		config = function(_, opts)
-			require("rust-tools").setup(opts)
-		end,
-	},
-	{
 		"simrat39/inlay-hints.nvim",
 		opts = function()
 			local options = {
