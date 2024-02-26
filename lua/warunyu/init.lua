@@ -11,3 +11,6 @@ vim.g.mapleader = " "
 vim.keymap.set("i", "jk", "<ESC>") -- Exit insert mode
 vim.keymap.set("n", "<ESC>", ":noh<CR>") -- Clear search highlights
 vim.keymap.set("n", "<C-Tab>", "<C-w>w") -- Switch between windows
+vim.keymap.set("n", "dw", "diw") -- Delete whole word
+vim.keymap.set("n", "cw", "ciw") -- Change whole word
+vim.keymap.set("n", "yw", "yiw") -- Copy whole word
